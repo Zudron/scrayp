@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrayp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.0/index.css">
+</head>
+<body>
+    <div id="stars-container"></div>
+    
+    <main class="content">
+        <h1 id="title">Scrayp</h1>
+        
+        <div class="input-container">
+            <div class="input-option">
+                <label class="radio-container">
+                    <input type="radio" name="input-type" value="text" checked>
+                    <span class="radio-label">Enter comma separated usernames</span>
+                </label>
+                <textarea id="username-input" placeholder="Enter usernames separated by commas..."></textarea>
+            </div>
+
+            <div class="input-option">
+                <label class="radio-container">
+                    <input type="radio" name="input-type" value="file">
+                    <span class="radio-label">Enter file with usernames</span>
+                </label>
+                <div id="file-drop-zone" class="file-drop">
+                    <p>Drag and drop a .txt file here</p>
+                    <input type="file" id="file-input" accept=".txt" hidden>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="stars.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

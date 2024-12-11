@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    min-height: 100vh;
+    font-family: 'JetBrains Mono', monospace;
+    color: #fff;
+    overflow: hidden;
+}
+
+#stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: twinkle var(--duration) infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+#title {
+    font-size: 5rem;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInZoom 1.5s ease-out forwards;
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, #fff, #7f7fd5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+@keyframes fadeInZoom {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.input-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-option {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.radio-container {
+    display: block;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.radio-label {
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+textarea, .file-drop {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    color: #fff;
+    font-family: inherit;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.file-drop {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.file-drop.drag-over {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
